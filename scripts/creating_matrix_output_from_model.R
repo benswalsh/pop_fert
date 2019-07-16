@@ -51,8 +51,8 @@ start.state <- c(N=10) # vector with starting conditions
 times  <- seq(0, 1000, by = 100)
 
 # Length of mf and ff values
-mf_array<- seq(0,1, length=1001)
-ff_array<-seq(0,1, length=1001)
+mf_array<- seq(0,1, length=101)
+ff_array<-seq(0,1, length=101)
 
 #Empty matrix for results
 equilibria1<- matrix(data=NA, nrow = length(mf_array), ncol= length(ff_array))

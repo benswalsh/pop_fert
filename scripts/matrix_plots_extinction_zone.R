@@ -136,7 +136,7 @@ extinction_zone <- ggplot() +
 extinction_zone
 
 
-#png(filename="figures/extinction_zone_RdPu_V2.png", type="cairo", units="in", width=6.9, height=6, pointsize=12, res=2000)
+#png(filename="figures/extinction_zone_RdPu_V3.png", type="cairo", units="in", width=6.9, height=6, pointsize=12, res=2000)
 #print(extinction_zone)
 #dev.off()
 
