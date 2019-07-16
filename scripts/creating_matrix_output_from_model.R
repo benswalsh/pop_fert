@@ -38,14 +38,10 @@ pop_growth <-function(t, state, parameters) {
 })
 }
 
-# Initial parameter values
+# Initial parameter values ####
 b = 50
 d = 10
 G	= 1000
-
-# Mating rate of 1 ####
-r = 1
-
 
 start.state <- c(N=10) # vector with starting conditions
 times  <- seq(0, 1000, by = 100)
@@ -53,6 +49,9 @@ times  <- seq(0, 1000, by = 100)
 # Length of mf and ff values
 mf_array<- seq(0,1, length=101)
 ff_array<-seq(0,1, length=101)
+
+# Mating rate of 1 ####
+r = 1
 
 #Empty matrix for results
 equilibria1<- matrix(data=NA, nrow = length(mf_array), ncol= length(ff_array))

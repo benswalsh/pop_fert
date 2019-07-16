@@ -15,20 +15,21 @@ require(ggplot2)
 # t = iterations
 
 # FUNCTION ####
-pop_fert<-function(N=10,b=50,ff=1,mf=1,r=1,G=1000,d=10,
-                         dt = 0.01, t=100)
+pop_fert<-function(N=10,b=50,ff=1,mf=1,r=1,K=1000,d=10,
+                         dt = 0.01, t=10000)
   
 {
   graph_frame <- c()
   
   #Full function within for loop
   for(i in 1:t) {
-    
+     
     #Calculation for ??
     ß<- ff*b*(r/(r+(1/mf)))
+    G<- K/((ff*b*r)/(d*r*(1/mf))-1)
     
     # Main formula
-    dN<- N + (ß*N*dt) -(d*N*(N/G)*dt)
+    dN<- N + (ß*N*dt) -(d*N*(1+N/G)*dt)
     
     new_data<-c(i,dN) 
     
@@ -45,7 +46,7 @@ pop_fert<-function(N=10,b=50,ff=1,mf=1,r=1,G=1000,d=10,
 # Create data frames
 fert1 <- pop_fert(ff=0.3, mf=1, r=3)
 fert2 <- pop_fert(ff=1, mf=0.3, r=1)
-fert3 <- pop_fert(ff=1, mf=1, r=3)
+fert3 <- pop_fert(ff=1, mf=1, r=1)
 fert4 <- pop_fert(ff=0.6, mf=0.6, r=3)
 
 
